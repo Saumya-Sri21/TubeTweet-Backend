@@ -10,7 +10,7 @@ const userSchema= new mongoose.Schema({
         unique:true,
         lowercase:true,
         trim:true,
-        index:true        //indexing helpful for searching
+        index:true       
     },
     email:{
         type:String,
@@ -26,7 +26,7 @@ const userSchema= new mongoose.Schema({
         index:true
     },
     avtar:{
-        type:String,     //cloudinary url
+        type:String,     
         unique:true
     },
     coverImage:{
@@ -48,8 +48,6 @@ const userSchema= new mongoose.Schema({
 
 },{timestamps:true})
 
-//pre is a mongoose middleware...data save krne se pehle ye kam kr do
-//the given function encrypts the password before saving in dB
 userSchema.pre("save",async function(next){
 
     if(this.isModified("password")) return next();
@@ -58,8 +56,6 @@ userSchema.pre("save",async function(next){
     next()
 })
 
-//.methods is use to create methods for the given schema
-//returns true if the given password nd encrypted one(saved in db) is same
 userSchema.methods.isPasswordCorrect= async function(password) {
 
     return await bcrypt.compare(password,this.password)
