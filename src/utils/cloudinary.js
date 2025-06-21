@@ -27,3 +27,5 @@ const uploadFileonCloud= async(localFile)=>{
     }
 
 }
+
+export {uploadFileonCloud}
