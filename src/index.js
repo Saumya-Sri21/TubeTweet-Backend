@@ -17,3 +17,11 @@ connectDB()
     console.log(`\n MongoDB Connection Failed!!!`)
     
 })
+
+app.get("/set-cookie", (req, res) => {
+  res.cookie("demoCookie", "demoValue", {
+    httpOnly: true,
+    secure: false,
+    sameSite: "lax"
+  }).send("Cookie has been set.");
+});

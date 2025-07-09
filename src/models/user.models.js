@@ -25,9 +25,8 @@ const userSchema= new mongoose.Schema({
         trim:true,
         index:true
     },
-    avtar:{
+    avatar:{
         type:String,     
-        unique:true,
         required:true
     },
     coverImage:{
@@ -63,7 +62,7 @@ userSchema.methods.isPasswordCorrect= async function(password) {
 }
 
 //to generate Access Tokens
-userSchema.methods.GenerateAccessToken= async function(){
+userSchema.methods.GenerateAccessToken=  function(){
 
     return jwt.sign(
         {
@@ -81,7 +80,7 @@ userSchema.methods.GenerateAccessToken= async function(){
     //to generate Refresh Tokens
     userSchema.methods.GenerateRefreshToken = function(){
 
-        jwt.sign(
+        return jwt.sign(
            {
             _id:this._id
         },
