@@ -1,20 +1,38 @@
-This is the backend for a YouTube-like video sharing platform, providing APIs for video upload, user authentication, likes, comments, subscriptions, and streaming support.
+# 📺 YouTube Tweet - Backend
 
-🚀 Features
-🔐 User Authentication (JWT-based)
+This is the **backend server** for **YouTube Tweet**, a platform that combines features of YouTube-style video interactions and Twitter-like communication. Built with Node.js and Express, it handles all core functionalities including user management, authentication, content interaction, and more.
 
-📁 Upload, Stream, and Manage Videos
+---
 
-👍 Like/Dislike Videos
+## 🚀 Features
 
-💬 Comment on Videos
+- 🔐 **Authentication & Authorization**
+  - User Registration
+  - Secure Login using JWT
+  - Refresh token support
+  - Role-based access
 
-👥 Subscribe/Unsubscribe to Channels
+- 👤 **User Management**
+  - Profile update & fetch
+  - Password hashing & validation
 
-📊 View Count Tracking
+- 📦 **Video/Tweet-like Operations**
+  - Uploading & managing content
+  - Like/Dislike content
+  - Commenting system
 
-🔍 Search & Filter Functionality
+- 🔁 **Subscription System**
+  - Subscribe/Unsubscribe to creators
+  - Fetch subscribed content
 
-🧾 Video Categories and Tags
+---
 
-🛠 Admin Panel APIs 
+## 🛠️ Tech Stack
+
+- **Node.js** with **Express.js**
+- **MongoDB** with **Mongoose** and **Aggregation Pipelines**
+- **JWT** for authentication
+- **Multer** for file uploads (if applicable)
+- **Cloudinary** / S3 for media storage (if applicable)
+- **dotenv** for environment config
+
