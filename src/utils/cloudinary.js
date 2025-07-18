@@ -1,5 +1,5 @@
 import { v2 as cloudinary } from 'cloudinary';
-import fs from 'fs'   //file system->use to read write open and all funct of file can be done by it..node k sath hi hota h
+import fs from 'fs'   
 
 cloudinary.config({ 
         cloud_name: process.env.CLOUDINARY_NAME, 
@@ -7,7 +7,7 @@ cloudinary.config({
         api_secret: process.env.CLOUDINARY_SECRET 
     });
 
-//to upload files on cloudinary
+
 const uploadFileonCloud= async(localFile)=>{
 
     try {
@@ -22,7 +22,7 @@ const uploadFileonCloud= async(localFile)=>{
         return response;
         
     } catch (error) {
-        fs.unlinkSync(localFile)   //remove the locally saved temporary file as the upload operation got failed
+        fs.unlinkSync(localFile)   
         return null;
         
     }
